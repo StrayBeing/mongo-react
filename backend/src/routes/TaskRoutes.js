@@ -20,16 +20,16 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Endpoint do pobierania wszystkich zadań użytkownika
+
 router.get('/', async (req, res) => {
     try {
         let sortBy = req.query.sortBy || 'createdAt';
-        let sortOrder = 1; // Default to ascending order
+        let sortOrder = 1;
 
         if (sortBy === 'status') {
-            sortBy = { status: 1, createdAt: -1 }; // Sort by status, then by date
+            sortBy = { status: 1, createdAt: -1 };
         } else if (sortBy === 'createdBy') {
-            sortBy = { createdBy: 1, createdAt: -1 }; // Sort by user, then by date
+            sortBy = { createdBy: 1, createdAt: -1 };
         } else {
             sortBy = { [sortBy]: sortOrder };
         }
@@ -44,7 +44,7 @@ router.get('/', async (req, res) => {
 });
 
 
-// Endpoint do aktualizacji statusu zadania
+
 router.put('/:id', async (req, res) => {
     try {
         const { status } = req.body;
@@ -56,7 +56,6 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// Endpoint do usuwania zadania
 router.delete('/:id', async (req, res) => {
     try {
         await Task.findByIdAndDelete(req.params.id);

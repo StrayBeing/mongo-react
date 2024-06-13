@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar'; // Importuj Navbar
-import axios from 'axios'; // Importuj axios do wykonywania zapytań HTTP
-import '../styles/style.css'; // Importuj style CSS
+import Navbar from '../components/Navbar'; 
+import axios from 'axios'; 
+import '../styles/style.css'; 
 
 const Home = () => {
     const [stats, setStats] = useState({ userCount: 0, taskCount: 0, completedTaskCount: 0 });
@@ -21,7 +21,7 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <Navbar /> {/* Dodaj nawigację */}
+            <Navbar /> {}
             <main className="main-content">
                 <h1>TODO LIST APP</h1>
                 <p>Number of users: {stats.userCount}</p>

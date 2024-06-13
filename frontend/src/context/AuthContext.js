@@ -22,9 +22,9 @@ export const AuthProvider = ({ children }) => {
     const login = async (username, password) => {
         try {
             const res = await axios.post('http://localhost:5000/api/users/login', { username, password });
-            localStorage.setItem('user', JSON.stringify(res.data.user)); // Zapisujemy tylko dane użytkownika
+            localStorage.setItem('user', JSON.stringify(res.data.user)); 
             setUser(res.data.user);
-            console.log('Successful login:', res.data); // Logowanie sukcesu
+            console.log('Successful login:', res.data); 
         } catch (error) {
             console.error('Błąd logowania:', error);
         }
@@ -33,9 +33,9 @@ export const AuthProvider = ({ children }) => {
     const register = async (username, password) => {
         try {
             const res = await axios.post('http://localhost:5000/api/users/register', { username, password });
-            localStorage.setItem('user', JSON.stringify(res.data.user)); // Zapisujemy tylko dane użytkownika
+            localStorage.setItem('user', JSON.stringify(res.data.user)); 
             setUser(res.data.user);
-            console.log('Successful registration:', res.data); // Logowanie sukcesu
+            console.log('Successful registration:', res.data); 
         } catch (error) {
             console.error('Błąd rejestracji:', error);
         }

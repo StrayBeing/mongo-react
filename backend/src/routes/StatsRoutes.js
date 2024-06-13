@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../models/Task');
-const User = require('../models/User'); // Zakładając, że masz model User
-
-// Endpoint do pobierania statystyk
+const User = require('../models/User'); 
 router.get('/stats', async (req, res) => {
     try {
         const userCount = await User.countDocuments();

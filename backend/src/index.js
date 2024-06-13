@@ -12,18 +12,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Dodaj middleware do autoryzacji użytkowników
-
-// Przykład z użyciem Passport.js i JWT
-// const passport = require('passport');
-// app.use(passport.initialize());
-// require('./config/passport')(passport);
 const statsRouter = require('./routes/StatsRoutes');
 app.use('/api', statsRouter);
 app.use('/api/users', userRoutes);
 app.use('/api/tasks', taskRoutes);
 
-// Obsługa ścieżki głównej
 app.get('/', (req, res) => {
     res.send('API działa');
 });
